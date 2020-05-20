@@ -1,0 +1,35 @@
+<html>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+<div id="exercise">
+   <!-- 1) Fill the <p> below with your Name and Age - using Interpolation -->
+    <p> {{name}} - {{age}}</p>
+    <!-- 2) Output your age, multiplied by 3 -->
+    <p>{{age *3}}</p>
+    <!-- 3) Call a function to output a random float between 0 and 1 (Math.random()) -->
+    <p>{{random()}}</p>
+    <!-- 4) Search any image on Google and output it here by binding the "src" attribute -->
+    <div>
+        <img v-bind:src="imageUrl" style="width:100px;height:100px">
+    </div>
+    <!-- 5) Pre-Populate this input with your name (set the "value" attribute) -->
+    <div>
+        <input type="text" v-bind:value="name">
+    </div>
+</div>
+</html>
+<script> 
+new Vue({
+    el:'#exercise',
+    data:{
+        name:'Sudhakar Dasoju',
+        age:23,
+        imageUrl: 'https://images.unsplash.com/photo-1542728498-09c6a1af7cb9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
+    },
+    methods:{
+        random: function(){
+            return Math.random();
+        }
+    }
+});
+</script>
+
